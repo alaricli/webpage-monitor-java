@@ -1,32 +1,54 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.io.IOException;
+
+import com.mashape.unirest.http.JsonNode;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.HttpResponse;
+import org.json.JSONObject;
 
 public class WebpageMonitor {
     public static void main(String[] args) throws IOException {
         // URL of the webpage to monitor
-        String url = "https://arcteryx.com/ca/en/shop/bird-head-toque";
+        ArrayList<String> urls = new ArrayList<String>();
+        urls.add("https://arcteryx.com/ca/en/shop/bird-head-toque");
+        urls.add("https://arcteryx.com/ca/en/shop/grotto-toque");
+        urls.add("https://arcteryx.com/ca/en/shop/bird-word-toque");
+        urls.add("https://arcteryx.com/ca/en/shop/rho-lightweight-wool-toque");
 
-        // Connect to the webpage
-        Document document = Jsoup.connect(url).get();
+        // loop for each item in the urls list
+        for (String url : urls) {
+            // Connect to the webpage
+            Document html = Jsoup.connect(url).get();
+            // Find the button element
+            Elements buttonElements = html.select("button");
+            boolean flag = false;
+            JSONObject payload = new JSONObject();
 
-        // Find the button element
-        Elements buttonElements = document.select("button");
-        boolean flag = false;
-        for (Element button : buttonElements) {
-            if (button.text().equals("Add To Cart")) {
-                flag = true;
-                break;
+            for (Element button : buttonElements) {
+                if (button.text().equals("Add To Cart")) {
+                    flag = true;
+                    break;
+                }
             }
-        }
-        if (flag) {
-            System.out.println("Add to cart button found!");
-        } else {
-            System.out.println("Add to cart button not found.");
+            if (flag) {
+                payload.put("content", "Add to cart button found for: " + url);
+                HttpResponse< JsonNode > jsonResponse = Unirest.post("https://discord.com/api/webhooks/1062994904382443570/rBDvD_8DVO_WyoUISZ85wsdqFjMe5_40cxwKq7_jBGp6Etu7CoZZKPLdHm1sI0qj43Lx")
+                        .header("Content-Type", "application/json")
+                        .body(payload)
+                        .asJson();
+            } else {
+                payload.put("content", "Add to cart button not found for: " + url);
+                HttpResponse< JsonNode > jsonResponse = Unirest.post("https://discord.com/api/webhooks/1062994904382443570/rBDvD_8DVO_WyoUISZ85wsdqFjMe5_40cxwKq7_jBGp6Etu7CoZZKPLdHm1sI0qj43Lx")
+                        .header("Content-Type", "application/json")
+                        .body(payload)
+                        .asJson();
+            }
         }
     }
 }
