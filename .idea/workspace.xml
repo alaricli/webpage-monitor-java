@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="603bd63e-9f74-4697-9a9b-22bffe0b7811" name="Changes" comment="Implemented the following changes:&#10;&#10;-resolved package import failure&#10;-implemented initial code for returning a string notification">
+    <list default="true" id="603bd63e-9f74-4697-9a9b-22bffe0b7811" name="Changes" comment="Implemented the following changes:&#10;&#10;-began adding feature for more than 1 link&#10;-began adding feature for Discord Webhooks&#10;-currently needs debugging on lines 44 and 50">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/WebpageMonitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/WebpageMonitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +44,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Projects/WebsiteMonitor",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -64,7 +64,8 @@
       <option name="presentableId" value="Default" />
       <updated>1674627626076</updated>
       <workItem from="1674627627404" duration="1574000" />
-      <workItem from="1674705121332" duration="4803000" />
+      <workItem from="1674705121332" duration="7854000" />
+      <workItem from="1674951434249" duration="272000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1674627915730</created>
@@ -80,7 +81,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674705537483</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Implemented the following changes:&#10;&#10;-began adding feature for more than 1 link&#10;-began adding feature for Discord Webhooks&#10;-currently needs debugging on lines 44 and 50">
+      <created>1674711628622</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1674711628622</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -89,6 +97,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Implemented the following changes:&#10;&#10;-resolved package import failure&#10;-implemented initial code for returning a string notification" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented the following changes:&#10;&#10;-resolved package import failure&#10;-implemented initial code for returning a string notification" />
+    <MESSAGE value="Implemented the following changes:&#10;&#10;-began adding feature for more than 1 link&#10;-began adding feature for Discord Webhooks&#10;-currently needs debugging on lines 44 and 50" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented the following changes:&#10;&#10;-began adding feature for more than 1 link&#10;-began adding feature for Discord Webhooks&#10;-currently needs debugging on lines 44 and 50" />
   </component>
 </project>
