@@ -47,6 +47,7 @@ public class WebpageMonitorGUI extends JFrame {
         updateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // input is Discord Webhook URL user input
                 String input = JOptionPane.showInputDialog("Enter the new webhook URL:");
                 if (input != null && !input.isEmpty()) {
                     WebpageMonitor.setWebhook(input);
