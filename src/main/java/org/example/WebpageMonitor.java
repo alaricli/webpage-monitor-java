@@ -16,7 +16,8 @@ import org.json.JSONObject;
 
 public class WebpageMonitor {
     private static boolean running = true;
-    private static String webhook;
+    // replace "webhook" with your Discord webhook
+    private static String webhook = "webhook";
 
     public static void setRunning(boolean value) {
         running = value;
@@ -28,9 +29,10 @@ public class WebpageMonitor {
 
     public static void main() throws IOException {
         ArrayList<String> urls = new ArrayList<>();
-        urls.add("https://arcteryx.com/ca/en/shop/bird-head-toque");
-        urls.add("https://arcteryx.com/ca/en/shop/grotto-toque");
-        urls.add("https://arcteryx.com/ca/en/shop/bird-word-toque");
+        // replace "website-url" with webstore to monitor
+        urls.add("website-url");
+        urls.add("website-url");
+        urls.add("website-url");
 
         while (running) {
             for (String url : urls) {
@@ -38,6 +40,7 @@ public class WebpageMonitor {
                 Elements buttonElements = html.select("button");
                 boolean restocked = false;
                 for (Element button : buttonElements) {
+                    // replace "Add To Cart" with in stock keyword as necessary
                     if (button.text().equals("Add To Cart")) {
                         restocked = true;
                         break;
